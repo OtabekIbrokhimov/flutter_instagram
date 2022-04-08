@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_instagram/models/postmodel.dart';
+import 'package:flutter_instagram/views/appBar_widget.dart';
+import 'package:flutter_instagram/views/feef%20widget.dart';
+
+class Likes extends StatefulWidget {
+  const Likes({Key? key}) : super(key: key);
+static const String id = "/LikesPage";
+  @override
+  State<Likes> createState() => _LikesState();
+}
+
+class _LikesState extends State<Likes> {
+  List<Post> items = [];
+
+  @override
+  void initState() {
+    super.initState();
+    items.addAll([
+      ]);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: appBar(title: "Likes",),
+      body: ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (context, index) => FeedWidget(post: items[index]),
+      ),
+    );
+  }
+}
